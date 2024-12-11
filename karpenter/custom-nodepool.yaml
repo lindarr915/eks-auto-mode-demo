@@ -6,10 +6,11 @@ spec:
   disruption:
     budgets:
     - nodes: 10%
-    consolidateAfter: 0s
+    consolidateAfter: 30s
     consolidationPolicy: WhenEmptyOrUnderutilized
   limits:
     cpu: 1k
+  weight: 10
   template:
     spec:
       expireAfter: 336h
@@ -29,7 +30,7 @@ spec:
         values: [ "4" ]
       - key: kubernetes.io/arch
         operator: In
-        values: [ "amd64" ]
+        values: [ "amd64", "arm64" ]
       - key: kubernetes.io/os
         operator: In
         values: [ "linux" ]
