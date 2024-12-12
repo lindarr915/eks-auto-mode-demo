@@ -13,7 +13,7 @@ spec:
   weight: 10
   template:
     spec:
-      expireAfter: 336h
+      expireAfter: 336h # 21 days; and it cannot exceed 21 days for Auto Mode
       nodeClassRef:
         group: eks.amazonaws.com
         kind: NodeClass
