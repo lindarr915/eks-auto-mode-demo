@@ -8,7 +8,8 @@ The repository contains YAML configuration files for creating an EKS cluster wit
 
 ```
 .
-├── cluster.yaml
+├── cluster
+│   └── cluster.yaml
 ├── ebs
 │   ├── gp2.yaml
 │   └── gp3.yaml
@@ -33,7 +34,7 @@ The repository contains YAML configuration files for creating an EKS cluster wit
 ### Prerequisites
 
 - AWS CLI (version 2.0 or later)
-- eksctl (version compatible with EKS 1.29)
+- eksctl (version compatible with EKS 1.29, 0.197.0+)
 - kubectl (version 1.29 or compatible)
 - Helm (version 3.0 or later)
 
@@ -48,6 +49,7 @@ aws configure
 2. Create the EKS cluster:
 
 ```bash
+cd eksctl
 eksctl create cluster -f cluster.yaml
 ```
 
@@ -73,6 +75,17 @@ kubectl apply -f sts.yaml
 
 ```bash
 kubectl apply -f lb-app/manifest.yaml
+```
+
+
+### with Terraform
+You can also use Terraform to provision the cluster.
+
+```bash
+cd terraform
+terraform init
+terraform plan -out=planfile
+terraform apply planfile
 ```
 
 ### Configuration
