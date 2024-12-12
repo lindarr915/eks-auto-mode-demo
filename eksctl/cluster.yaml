@@ -1,4 +1,5 @@
 # A sample ClusterConfig file that creates a cluster with Auto Mode enabled.
+# eksctl version: 0.197.0+
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
